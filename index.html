@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site oficial da Paróquia Santa Rita de Cássia – Quissisana, São José dos Pinhais – PR.">
+  <title>Paróquia Santa Rita de Cássia</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --vermelho: #822c2a;
+      --bege: #f9f7f1;
+      --dourado: #c9aa71;
+      --texto: #4a2c2a;
+      --fundo-transparente: rgba(255,255,255,0.9);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'EB Garamond', serif;
+      background-color: var(--bege);
+      color: var(--texto);
+      line-height: 1.6;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    header {
+      background-color: var(--vermelho);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header img.logo {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      height: 60px;
+    }
+    nav {
+      background-color: var(--dourado);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: var(--vermelho);
+    }
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 50px;
+      background: var(--fundo-transparente);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in;
+    }
+    h2 {
+      color: var(--vermelho);
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--dourado);
+      padding-bottom: 5px;
+    }
+    footer {
+      background-color: var(--vermelho);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    .mapa {
+      width: 100%;
+      height: 450px;
+      border-radius: 10px;
+      border: none;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 10px 0;
+    }
+    .social-icons a {
+      font-size: 24px;
+      color: var(--vermelho);
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      color: var(--dourado);
+    }
+    iframe.youtube {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 20px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .toggle-btn {
+      background: var(--dourado);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .toggle-btn:hover {
+      background: var(--vermelho);
+    }
+    .toggle-content { display: none; margin-top: 10px; }
+    .toggle-content.show { display: block; }
+    .poster {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 90%;
+      animation: fadeIn 0.5s ease-in;
+    }
+    .close-modal {
+      float: right;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function toggleInfo(id) {
+      const content = document.getElementById(id);
+      content.classList.toggle('show');
+    }
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Paróquia Santa Rita de Cássia</h1>
+    <p>Quissisana – São José dos Pinhais – PR</p>
+    <img src="logo-semfundo.png" alt="Logo Paróquia" class="logo">
+    <div class="social-icons">
+      <a href="https://instagram.com/paroquiasantaritasjpqss" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@paroquiasantaritasjpqss" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://wa.me/5541920041831" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:paroquiasantaritasjp@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#catequese">Catequese</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#youtube">Transmissões</a>
+    <a href="#localizacao">Como Chegar</a>
+  </nav>
+
+  <main>
+    <section id="catequese">
+      <h2>Catequese</h2>
+      <button class="toggle-btn" onclick="openModal('modalCatequese')">Informações da Catequese</button>
+    </section>
+    <div id="modalCatequese" class="modal" onclick="closeModal('modalCatequese')">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="closeModal('modalCatequese')">&times;</span>
+        <h3>Informações sobre a Catequese</h3>
+        <p>📍 Paróquia Santa Rita de Cássia – SJP</p>
+        <p><strong>📖 Catequese para Adultos</strong><br>🗓️ Duração: 1 ano<br>⏰ Horário: Quarta-feira às 19h</p>
+        <p><strong>👧👦 Catequese para Crianças</strong><br>🗓️ Duração: 3 anos – Primeira Eucaristia + 2 anos – Crisma<br>⏰ Horários:<br>• Sábados: 8h às 9h15 / 9h30 às 10h45<br>• Quartas: 18h30</p>
+        <p><strong>📄 Documentos Necessários:</strong></p>
+        <ul>
+          <li>RG/CPF da criança ou adulto</li>
+          <li>Certidão de Batismo (se tiver)</li>
+          <li>Comprovante de endereço</li>
+          <li>Certidão de Eucaristia e Crisma (se tiver)</li>
+          <li>Documentos dos pais/responsáveis e padrinhos</li>
+        </ul>
+        <p><strong>💰 Taxas:</strong><br>Catequese Infantil: R$35,00<br>Catequese de Adultos: R$100,00</p>
+      </div>
+    </div>
+
+    <section id="eventos">
+      <h2>Próximos Eventos</h2>
+      <img src="poster-festa-junina.jpg" alt="Festa Junina Paróquia Santa Rita" class="poster">
+    </section>
+
+    <section id="youtube">
+      <h2>Transmissões ao Vivo</h2>
+      <div class="video-grid">
+        <iframe class="youtube" src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe>
+        <iframe class="youtube" src="https://www.youtube.com/embed/VIDEO_ID2" allowfullscreen></iframe>
+        <iframe class="youtube" src="https://www.youtube.com/embed/VIDEO_ID3" allowfullscreen></iframe>
+        <iframe class="youtube" src="https://www.youtube.com/embed/VIDEO_ID4" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section id="localizacao">
+      <h2>📍 Localização da Paróquia</h2>
+      <p>Rua Joana Jesse Micrute, 388 – Quissisana, São José dos Pinhais – PR</p>
+      <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18..." allowfullscreen loading="lazy"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Paróquia Santa Rita de Cássia - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
